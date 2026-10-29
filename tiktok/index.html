@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TikTok sign-in · Bones to Beasts</title><link rel="stylesheet" href="../style.css"></head><body>
+<h1>TikTok sign-in</h1>
+<p id="msg">Waiting for TikTok…</p>
+<p>Copy this page's full address and paste it into the terminal that asked for it:</p>
+<p><code id="url"></code></p>
+<script>
+var u=location.href;document.getElementById('url').textContent=u;
+var q=new URLSearchParams(location.search);
+document.getElementById('msg').textContent=q.get('code')?'Signed in with TikTok. The posting tool needs the address below.':(q.get('error')?'TikTok reported an error: '+q.get('error_description')||q.get('error'):'This page is the return address for the Bones to Beasts posting tool.');
+</script>
+<footer><a href="../">Back</a></footer>
+</body></html>
